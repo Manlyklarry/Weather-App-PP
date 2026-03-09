@@ -19,6 +19,23 @@ body{
   text-align: center;
 }
 
+#location,
+#time,
+#temperature,
+#condition{
+  margin-bottom: 10px;
+}
+
+#input-city{
+  border: none;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  padding: 5px;
+  border: 1px solid blue;
+  border-radius: 5px;
+
+}
+
 #showWeatherBtn {
   background: dodgerblue;
   padding: 10px 15px;
