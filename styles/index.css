@@ -1,18 +1,35 @@
-*{
-  font-family:Arial, Helvetica, sans-serif;
+* {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 70vh;
 }
 
-.container{
-  background:grey;
+body.dark {
+  background: #121212;
+}
+
+body.dark .container {
+  background: #1e1e1e;
+  color: white;
+}
+
+body.dark input {
+  background: #2c2c2c;
+}
+
+body.dark button {
+  background: greenyellow;
+}
+
+.container {
+  background: grey;
   padding: 30px 45px;
   border: 1px solid greenyellow;
   border-radius: 15px;
@@ -22,25 +39,76 @@ body{
 #location,
 #time,
 #temperature,
-#condition{
+#condition {
   margin-bottom: 10px;
 }
 
-#input-city{
+#input-city {
   border: none;
   margin-bottom: 15px;
   margin-top: 10px;
   padding: 5px;
   border: 1px solid blue;
   border-radius: 5px;
-
 }
 
-#showWeatherBtn {
+button {
   background: dodgerblue;
   padding: 10px 15px;
   border: none;
-  border-radius:5px;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+}
+
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.switch input {
+  opacity: o;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 25px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3.5px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
 }

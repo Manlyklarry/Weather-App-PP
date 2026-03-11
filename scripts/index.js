@@ -26,7 +26,7 @@ function displayWeather() {
       console.log("Data from weatherapi", data);
 
       if (data.error) {
-        alert("Something went wrong, please try again later...");
+        alert("Server not responding..");
         return;
       }
 
@@ -40,6 +40,30 @@ function displayWeather() {
       condition.innerText = "Condition: " + data.current.condition.text;
     })
     .catch((error) => {
-      alert("City name must be provided");
+      alert("Sorry, something went wrong try again later");
     });
+
+  inputCity.value = "";
 }
+
+const darkToggle = document.getElementById("darkToggle");
+
+window.addEventListener("load", () => {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    darkToggle.checked = true;
+    document.body.classList.add("dark");
+  }
+});
+
+//toggle theme
+darkToggle.addEventListener("change", () => {
+  if (darkToggle.checked) {
+    document.body.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.body.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+});
